@@ -1,0 +1,11 @@
+<h2>{{ title }}</h2>
+
+@if (selfies.length == 0) {
+  <p>Aucun selfie disponible</p>
+} @else {
+  <ul>
+    @for (selfie of selfies; track selfie) {
+      <li>{{ selfie }}</li>
+    }
+  </ul>
+}
