@@ -3,9 +3,16 @@
 @if (selfies.length == 0) {
   <p>Aucun selfie disponible</p>
 } @else {
-  <ul>
-    @for (selfie of selfies; track selfie) {
-      <li>{{ selfie }}</li>
+  <div>
+    @for (selfie of selfies; track selfie.id) {
+      <div>
+        <img src="{{ selfie.path }}" alt="{{selfie.title}}" />
+        <div style="display: flex; justify-content: space-between">
+          <p>{{ selfie.title }}</p>
+          <p>Post By: {{ selfie.wookie.name }}</p>
+        </div>
+        <p>{{ selfie.description }}</p>
+      </div>
     }
-  </ul>
+  </div>
 }

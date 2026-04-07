@@ -1,0 +1,8 @@
+  <select name="planets" id="planets" [disabled]="planets.length === 0">
+    @if (!planets || planets.length === 0) {
+      <option>Aucune planète de disponible</option>
+    }
+    @for (planet of planets; track planet.id) {
+      <option value="{{ planet?.id }}">{{ planet?.name }}</option>
+    }
+  </select>
