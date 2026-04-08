@@ -1,0 +1,27 @@
+<h2>{{ title }}</h2>
+<table style="width: 100%; text-align: center">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>title</th>
+    <th>date</th>
+    <th>Nombre de vue</th>
+  </tr>
+  </thead>
+  <tbody>
+    @if (stats.length > 0) {
+      @for (stat of stats; track stat.id) {
+        <tr>
+          <td>{{ stat.id }}</td>
+          <td>{{ stat.title }}</td>
+          <td>{{ stat.date.toLocaleDateString() }}</td>
+          <td>{{ stat.views.length }}</td>
+        </tr>
+      }
+    } @else {
+      <tr>
+        <td colspan="4" style="width: 100%; font-size: 20px; padding: 10px">Aucune stats de disponible</td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,13 @@
+
+<div>
+@for(selfie of selfies; track selfie.id) {
+  <div style="display: flex; justify-content: space-between">
+    <p>{{ selfie.name }}</p>
+    <button>
+      Supprimer
+    </button>
+  </div>
+} @empty {
+  <p>Aucun selfie à affiché</p>
+}
+</div>
