@@ -3,3 +3,5 @@ export interface Planet {
   name: string;
   size: number;
 }
+
+export type Planets = Planet[];

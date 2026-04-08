@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Planet } from '../../models/planet';
+import { Component, inject, OnInit } from '@angular/core';
+import { Planets } from '../../models/planet';
+import { GetPlanets } from '../../services/get-planets';
 
 @Component({
   selector: 'planet-select',
@@ -7,11 +8,16 @@ import { Planet } from '../../models/planet';
   templateUrl: './planet-select.html',
   styleUrl: './planet-select.css'
 })
-export class PlanetSelect {
-  protected readonly planets: Planet[] = [
-    { id: 1, name: 'Tatouine', size: 2 },
-    { id: 2, name: 'Naboo', size: 4 },
-    { id: 3, name: 'Kamino', size: 8 },
-    { id: 4, name: 'Coruscant', size: 12 }
-  ];
+export class PlanetSelect implements OnInit {
+  private getPlanets = inject(GetPlanets);
+
+  protected planets: Planets = [];
+
+  ngOnInit() {
+    this.getPlanets.getAll().subscribe({
+      next: (planets) => {
+        this.planets = planets;
+      }
+    });
+  }
 }
