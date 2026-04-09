@@ -1,12 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { DisplaySelfies } from './features/selfies/components/display-selfies/display-selfies';
 import { Profile } from './features/profile/components/profile/profile';
-import { DisplayStats } from './features/statistique/components/display-stats/display-stats';
+import { Header } from './core/components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DisplaySelfies, Profile, DisplayStats],
+  imports: [Profile, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

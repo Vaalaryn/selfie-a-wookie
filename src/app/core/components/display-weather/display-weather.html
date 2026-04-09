@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=cloud,weather_mix,bolt,clear_day" />
+
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+  <i>{{ planetWeather?.planet }}</i>
+  <div style="display: flex; justify-content: space-between">
+    <span class="material-symbols-outlined">{{ planetWeather?.weather | weatherIcon }}</span>
+    <i>{{ planetWeather?.temperature }}°C</i>
+  </div>
+</div>

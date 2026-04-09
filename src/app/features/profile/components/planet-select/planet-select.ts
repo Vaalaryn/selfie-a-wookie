@@ -9,11 +9,11 @@ import { GetPlanets } from '../../services/get-planets';
   styleUrl: './planet-select.css'
 })
 export class PlanetSelect implements OnInit {
-  private getPlanets = inject(GetPlanets);
+  private readonly getPlanets = inject(GetPlanets);
 
   protected planets: Planets = [];
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getPlanets.getAll().subscribe({
       next: (planets) => {
         this.planets = planets;
