@@ -1,0 +1,15 @@
+@let starshipsList = starships$ | async;
+
+@if (starshipsList) {
+  <select name="" id="">
+    @for (starship of starshipsList; track starship.name) {
+      <option value="{{ starship.name }}">{{ starship.label }}</option>
+    }
+  </select>
+  <select name="" id="">
+    @for (starship of starshipsList; track starship.name) {
+      <option value="{{ starship.name }}">{{ starship |  getStarshipsLabel }}</option>
+    }
+  </select>
+
+}

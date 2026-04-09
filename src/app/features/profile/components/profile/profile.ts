@@ -3,12 +3,14 @@ import { PlanetSelect } from '../planet-select/planet-select';
 import { GetSelfies } from '../../services/get-selfies-by-wookie-id';
 import { Selfies } from '../../models/selfies';
 import { DisplaySelfiesOfWookie } from '../display-selfies-of-wookie/display-selfies-of-wookie';
+import { StarshipsSelect } from '../starships-select/starships-select';
 
 @Component({
   selector: 'app-profile',
   imports: [
     PlanetSelect,
-    DisplaySelfiesOfWookie
+    DisplaySelfiesOfWookie,
+    StarshipsSelect
   ],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
