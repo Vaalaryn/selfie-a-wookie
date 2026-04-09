@@ -8,7 +8,7 @@ import { PlanetWeather } from '../models/planet-weather';
 export class GetWeather {
   getWeatherFromPlanet(planetId: number | null): Observable<PlanetWeather> {
     return of(
-      { planet: "Naboo", weather: 0, temperature: 22 }
+      { planet: "Naboo", weather: 0, temperature: 24 }
     );
   }
 }
