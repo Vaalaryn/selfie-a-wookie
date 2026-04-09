@@ -3,7 +3,7 @@
 @for(selfie of selfies; track selfie.id) {
   <div style="display: flex; justify-content: space-between">
     <p>{{ selfie.name }}</p>
-    <button>
+    <button (click)="deleteSelfie(selfie.id)">
       Supprimer
     </button>
   </div>

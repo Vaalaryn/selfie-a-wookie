@@ -24,4 +24,8 @@ export class Profile {
   };
 
   protected selfies: Selfies = this.getSelfies.getByWookieId(this.wookie.id);
+
+  deleteSelfie(id: number) {
+    this.selfies = this.selfies.filter(el => el.id !== id);
+  }
 }
